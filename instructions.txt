@@ -1,1 +1,3 @@
 FIGMA: https://www.figma.com/file/jOdstMt9a91CeNRU7YVJbu/Pixify?node-id=0-1&t=NHchoon0Q4S7S3rN-0
+NOTION: https://mimodocs.notion.site/Unit-3-Project-Guide-Pixify-C27-c1f5c2f5164f4e5aa2a65f1ffeb7c4e1
+GITHUB STARTER CODE: https://github.com/mimo-bootcamp/pixify-starter-code

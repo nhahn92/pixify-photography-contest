@@ -1,0 +1,27 @@
+* {
+    /* Color Palette */
+    --black: #000000;
+    --cyan: #7BFFE9;
+    --dark-blue: #2A3B49;
+    --white: #FFFFFF;
+
+    /* Margin & Padding */
+
+    /* Font Family */
+    --montserrat: 'Montserrat', sans-serif;
+
+    /* Font Size */
+    --header-anchor-font-size: 16px;
+    --logo-font-size: 36px;
+
+    --h1-font-size: 36px;
+    --h2-font-size: 24px;
+    
+    --large-button-font-size: 36px;
+    --small-button-font-size: 20px;
+
+    --about-us-page-p-font-size: 20px;
+    --details-page-p-font-size: 20px;
+    --landing-page-p-font-size: 30px;
+    --submissions-page-p-font-size: 16px;
+}
