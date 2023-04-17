@@ -1,5 +1,100 @@
+/****** SITE-WIDE DEFAULTS ******/
+a {
+    text-decoration: none;
+}
 
+body {
+    font-family: var(--montserrat);
+}
 
+button {
+    font-family: var(--montserrat);
+}
+
+/****** ALL PAGES - HEADER & NAVIGATION ******/
+/* [All Pages - Header & Navigation] Container */
+header {
+    background-color: var(--dark-blue);
+    height: 50px;
+    padding: 0 10px 0 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* [All Pages - Header & Navigation] Logo - "Pixify" */
+.logo-navigation {
+    color: var(--cyan);
+    font-size: var(--logo-font-size);
+    text-transform: uppercase;
+}
+
+/* [Landing Page - Header & Navigation] Right Anchor Container */
+#landing-page-navigation-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 20px;
+}
+
+/* [Submissions, About Us & Details Pages - Header & Navigation] Right Anchor Container */
+/* This one is different than the landing page because it contains a third column for "Dark Mode" */
+.dark-mode-navigation-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 20px;
+}
+
+/* [All Pages - Header & Navigation] Anchors */
+nav a {
+    color: var(--white);
+}
+
+/****** LANDING PAGE - MAIN SECTION ******/
+/* [Landing Page - Main Section] Background Image */
+main img {
+    height: auto;
+    width: 100%;
+
+    position: absolute;
+}
+
+/* [Landing Page - Main Section] Paragraph & Button Container */
+.landing-page-introduction-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+    
+}
+
+/* [Landing Page - Main Section] Paragraph Container */
+.landing-page-text-container {
+    background-color: var(--dark-blue);
+    border-radius: 150px 150px 150px 0;
+    color: var(--white);
+    font-size: var(--landing-page-p-font-size);
+    max-width: 660px;
+    padding: 50px 35px 30px 25px;
+    text-align: center;
+}
+
+/* [Landing Page - Main Section] Button - "Submit Now" */
+.large-button {
+    background-color: transparent;
+    border: 2px solid var(--cyan);
+    border-radius: 60px;
+    color: var(--cyan);
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--large-button-font-size);
+    margin: 0 25px 25px 0;
+    padding: 36px;
+    text-transform: uppercase;
+}
 
 
 
