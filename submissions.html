@@ -14,13 +14,32 @@
 </head>
 <body>
     <header>
-        <a href="./index.html" class="logo-navigation">Pixify</a>
-        <nav class="dark-mode-navigation-container">
+        <a href="./index.html" class="logo-navigation">PIXIFY</a>
+        <nav class="navigation-container">
             <a href="./submissions.html">2023 Submissions</>
             <a href="./about-us.html">About</a>
-            <p>Dark Mode</p>
+            <button id="theme-button">Dark Mode</button>
         </nav>
     </header>
+    <main id="submissions-page-main-container">
+        <section id="submissions-page-submissions-container">
+            <h1>2023 SUBMISSIONS</h1>
+            <div id="images-container"></div>
+        </section>
+        <section>
+            <form id="submissions-page-form-container">
+                <h2>SUBMIT YOUR WORK</h2>
+                <input placeholder="Your Name">
+                <input placeholder="Title of Your Entry">
+                <input placeholder="Image Url One">
+                <input placeholder="Image Url Two">
+                <input placeholder="Image Url Three">
+                <input placeholder="Image Url Four">
+                <input placeholder="Image Url Five">
+                <button class="small-button">SUBMIT</button>
+            </form>
+        </section>
+    </main>
     <script src="scripts/script.js"></script>
 </body>
 </html>
