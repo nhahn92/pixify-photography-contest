@@ -48,3 +48,53 @@ const imageSets = [
       ]
     }
   ];
+
+
+// Creates new elements using object details to populate #images-container div on Submissions Page
+const displaySubmissions = (images) => {
+  const imagesContainer = document.querySelector("#images-container");
+  const allImages = images.map(item => {
+    return `<a class="image-submission" href="details.html?id=${item.id}">
+    <img src=${item.images[0]} alt=${item.title} class="submission-image" />
+  <div class="submission-details-container">
+    <p>${item.title} - ${item.name}</p>
+    <p class="see-more">see more</p>
+  </div>
+</a>`;
+  })
+  // Adds new elements to the container and removes commas from array
+  imagesContainer.innerHTML = allImages.join("");
+}
+
+// Populate #images-container div with image objects on page load
+window.onload = function() {
+  displaySubmissions(imageSets);
+};
+
+
+// Dark Mode/Light Mode Toggle
+const themeButton = document.querySelector("#theme-button");
+const toggleTheme = () => {
+  const body = document.querySelector("body");
+  const heading1 = document.querySelector("h1");
+  const submissionDetails = document.querySelectorAll(".submission-details-container");
+
+  if (body.style.backgroundColor === "var(--dark-blue)") {
+    body.style.backgroundColor = "var(--white)";
+    heading1.style.color = "var(--black)";
+    themeButton.innerHTML = "Dark Mode";
+    // Loops through the querySelectorAll collection "submissionDetails" to turn all nodes black for Light Mode
+    for (let i = 0; i < submissionDetails.length; i++) {
+      submissionDetails[i].style.color = "var(--black)";
+    }
+  } else {
+    body.style.backgroundColor = "var(--dark-blue)"
+    heading1.style.color = "var(--white)";
+    themeButton.innerHTML = "Light Mode";
+    // Loops through the querySelectorAll collection "submissionDetails" to turn all nodes white for Dark Mode
+    for (let i = 0; i < submissionDetails.length; i++) {
+      submissionDetails[i].style.color = "var(--white)";
+    }
+  }
+}
+themeButton.onclick = toggleTheme;
