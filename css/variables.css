@@ -3,6 +3,7 @@
     --black: #000000;
     --cyan: #7BFFE9;
     --dark-blue: #2A3B49;
+    --light-gray: #D9D9D9;
     --white: #FFFFFF;
 
     /* Margin & Padding */
@@ -22,4 +23,10 @@
     --about-us-page-p-font-size: 20px;
     --details-page-p-font-size: 20px;
     --landing-page-p-font-size: 30px;
+
+    --submissions-page-input-font-size: 16px;
+
+    /* Font Weight */
+    --h1-font-weight: 700;
+    --h2-font-weight: 700;
 }
