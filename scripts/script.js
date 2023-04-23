@@ -50,9 +50,9 @@ const imageSets = [
   ];
 
 
-// Creates new elements using object details to populate #images-container div on Submissions Page
+// [Submissions Page] Creates new elements using object details to populate #images-container div
+const imagesContainer = document.querySelector("#images-container");
 const displaySubmissions = (images) => {
-  const imagesContainer = document.querySelector("#images-container");
   const allImages = images.map(item => {
     return `<a class="image-submission" href="details.html?id=${item.id}">
     <img src=${item.images[0]} alt=${item.title} class="submission-image" />
@@ -60,19 +60,19 @@ const displaySubmissions = (images) => {
     <p>${item.title} - ${item.name}</p>
     <p class="see-more">see more</p>
   </div>
-</a>`;
+  </a>`;
   })
   // Adds new elements to the container and removes commas from array
   imagesContainer.innerHTML = allImages.join("");
 }
 
-// Populate #images-container div with image objects on page load
+// [Submissions Page] Populates #images-container div with image objects on page load
 window.onload = function() {
-  displaySubmissions(imageSets);
-};
+    displaySubmissions(imageSets);
+}
 
 
-// Dark Mode/Light Mode Toggle
+// [Submissions, About Us & Details Pages] Dark Mode/Light Mode Toggle
 const themeButton = document.querySelector("#theme-button");
 const toggleTheme = () => {
   const body = document.querySelector("body");
@@ -98,3 +98,59 @@ const toggleTheme = () => {
   }
 }
 themeButton.onclick = toggleTheme;
+
+// [Submissions Page] Adds new submissions to #images-container div from entered values
+const submitButton = document.querySelector("#submit-button");
+submitButton.addEventListener ("click", (e) => {
+  // Prevents the form's default function
+  e.preventDefault();
+
+  // Gets values from the form
+  const name = document.querySelector("input[name='name']").value;
+  const title = document.querySelector("input[name='title']").value;
+  const imageUrlOne = document.querySelector("input[name='imageUrlOne']").value;
+  const imageUrlTwo = document.querySelector("input[name='imageUrlTwo']").value;
+  const imageUrlThree = document.querySelector("input[name='imageUrlThree']").value;
+  const imageUrlFour = document.querySelector("input[name='imageUrlFour']").value;
+  const imageUrlFive = document.querySelector("input[name='imageUrlFive']").value;
+
+  // Creates a filtered array of entered URL values, excluding empty fields
+  const imageUrlArray = [];
+  [imageUrlOne, imageUrlTwo, imageUrlThree, imageUrlFour, imageUrlFive].filter(item => {
+    if (item != "") {
+      imageUrlArray.push(item);
+    }
+  });
+  
+  // Create a new "a" element from the form values and filtered URLs
+  let newImageId = 5;
+  const createNewSubmission = array => {
+    // Loops through array to add a class and href attribute
+    for (let i = 0; i < array.length; i++) {
+      const newSubmission = document.createElement("a");
+      newSubmission.classList.add("submission-image");
+      newSubmission.href = `details.html?id=${newImageId}`;
+      // Increments href Id each loop
+      newImageId += 1;
+
+      // Adds the following HTML to each new "a" element
+      newSubmission.innerHTML = `<img src=${array[i]} alt=${title} class="submission-image" />
+        <div class="submission-details-container">
+          <p>${title} - ${name}</p>
+          <p class="see-more">see more</p>
+        </div>`;
+      // Appends the new "a" element to the existing #images-container div
+      imagesContainer.appendChild(newSubmission);
+    }
+  }
+  createNewSubmission(imageUrlArray);
+
+  // Resets all form inputs
+  document.querySelector("input[name='name']").value = "";
+  document.querySelector("input[name='title']").value = "";
+  document.querySelector("input[name='imageUrlOne']").value = "";
+  document.querySelector("input[name='imageUrlTwo']").value = "";
+  document.querySelector("input[name='imageUrlThree']").value = "";
+  document.querySelector("input[name='imageUrlFour']").value = "";
+  document.querySelector("input[name='imageUrlFive']").value = "";
+})
