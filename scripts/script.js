@@ -49,18 +49,17 @@ const imageSets = [
     }
   ];
 
-
 // [Submissions Page] Creates new elements using object details to populate #images-container div
 const imagesContainer = document.querySelector("#images-container");
 const displaySubmissions = (images) => {
   const allImages = images.map(item => {
     return `<a class="image-submission" href="details.html?id=${item.id}">
     <img src=${item.images[0]} alt=${item.title} class="submission-image" />
-  <div class="submission-details-container">
-    <p>${item.title} - ${item.name}</p>
-    <p class="see-more">see more</p>
-  </div>
-  </a>`;
+      <div class="submission-details-container">
+        <p>${item.title} - ${item.name}</p>
+        <p class="see-more">see more</p>
+      </div>
+    </a>`;
   })
   // Adds new elements to the container and removes commas from array
   imagesContainer.innerHTML = allImages.join("");
@@ -70,7 +69,6 @@ const displaySubmissions = (images) => {
 window.onload = function() {
     displaySubmissions(imageSets);
 }
-
 
 // [Submissions, About Us & Details Pages] Dark Mode/Light Mode Toggle
 const themeButton = document.querySelector("#theme-button");
@@ -97,15 +95,16 @@ const toggleTheme = () => {
     }
   }
 }
+// Adds the Dark Mode/Light Mode toggle (event handler) to the Dark Mode button
 themeButton.onclick = toggleTheme;
 
 // [Submissions Page] Adds new submissions to #images-container div from entered values
 const submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener ("click", (e) => {
-  // Prevents the form's default function
+  // Prevents the form's default function of refreshing the page
   e.preventDefault();
 
-  // Gets values from the form
+  // Gets entered values from the form
   const name = document.querySelector("input[name='name']").value;
   const title = document.querySelector("input[name='title']").value;
   const imageUrlOne = document.querySelector("input[name='imageUrlOne']").value;
@@ -122,7 +121,7 @@ submitButton.addEventListener ("click", (e) => {
     }
   });
   
-  // Create a new "a" element from the form values and filtered URLs
+  // Creates a new "a" element from the form values and filtered URLs
   let newImageId = 5;
   const createNewSubmission = array => {
     // Loops through array to add a class and href attribute
