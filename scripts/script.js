@@ -70,16 +70,20 @@ window.onload = function() {
     displaySubmissions(imageSets);
 }
 
-// [Submissions, About Us & Details Pages] Dark Mode/Light Mode Toggle
-const themeButton = document.querySelector("#theme-button");
+// [Submissions, Details & About Us Pages] Dark Mode/Light Mode Toggle
+// There are special instructions that execute only if a certain element exists in the page.
+const themeButton = document.querySelector(".theme-button");
+const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 const toggleTheme = () => {
   const body = document.querySelector("body");
   const heading1 = document.querySelector("h1");
   const paragraph = document.querySelectorAll("p");
-  const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 
   if (body.style.backgroundColor === "var(--dark-blue)") {
-    aboutUsSubmitButton.style.border = "none";
+    // Determines if a certain element exists in the page
+    if (aboutUsSubmitButton) {
+      aboutUsSubmitButton.style.border = "none";
+    }
     body.style.backgroundColor = "var(--white)";
     heading1.style.color = "var(--black)";
     themeButton.innerHTML = "Dark Mode";
@@ -88,7 +92,10 @@ const toggleTheme = () => {
       paragraph[i].style.color = "var(--black)";
     }
   } else {
-    aboutUsSubmitButton.style.border = "2px solid var(--cyan)";
+    // Determines if a certain element exists in the page
+    if (aboutUsSubmitButton) {
+      aboutUsSubmitButton.style.border = "2px solid var(--cyan)";
+    }
     body.style.backgroundColor = "var(--dark-blue)"
     heading1.style.color = "var(--white)";
     themeButton.innerHTML = "Light Mode";
@@ -98,7 +105,7 @@ const toggleTheme = () => {
     }
   }
 }
-// Adds the Dark Mode/Light Mode toggle (event handler) to the Dark Mode button
+// Adds the Dark Mode/Light Mode toggle to the Dark Mode button
 themeButton.onclick = toggleTheme;
 
 // [Submissions Page] Adds new submissions to #images-container div from entered values
