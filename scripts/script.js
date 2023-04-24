@@ -75,23 +75,26 @@ const themeButton = document.querySelector("#theme-button");
 const toggleTheme = () => {
   const body = document.querySelector("body");
   const heading1 = document.querySelector("h1");
-  const submissionDetails = document.querySelectorAll(".submission-details-container");
+  const paragraph = document.querySelectorAll("p");
+  const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 
   if (body.style.backgroundColor === "var(--dark-blue)") {
+    aboutUsSubmitButton.style.border = "none";
     body.style.backgroundColor = "var(--white)";
     heading1.style.color = "var(--black)";
     themeButton.innerHTML = "Dark Mode";
-    // Loops through the querySelectorAll collection "submissionDetails" to turn all nodes black for Light Mode
-    for (let i = 0; i < submissionDetails.length; i++) {
-      submissionDetails[i].style.color = "var(--black)";
+    // Loops through the collection "paragraph" to turn all nodes black for Light Mode
+    for (let i = 0; i < paragraph.length; i++) {
+      paragraph[i].style.color = "var(--black)";
     }
   } else {
+    aboutUsSubmitButton.style.border = "2px solid var(--cyan)";
     body.style.backgroundColor = "var(--dark-blue)"
     heading1.style.color = "var(--white)";
     themeButton.innerHTML = "Light Mode";
-    // Loops through the querySelectorAll collection "submissionDetails" to turn all nodes white for Dark Mode
-    for (let i = 0; i < submissionDetails.length; i++) {
-      submissionDetails[i].style.color = "var(--white)";
+    // Loops through the collection "paragraph" to turn all nodes white for Dark Mode
+    for (let i = 0; i < paragraph.length; i++) {
+      paragraph[i].style.color = "var(--white)";
     }
   }
 }
