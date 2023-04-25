@@ -12,19 +12,6 @@ h1 {
     font-weight: var(--h1-font-weight);
 }
 
-h2 {
-    font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
-}
-
-.large-button {
-    border-radius: 60px;
-    color: var(--cyan);
-    cursor: pointer;
-    display: inline-block;
-    font-size: var(--large-button-font-size);
-}
-
 /****** ALL PAGES - HEADER & NAVIGATION ******/
 /* [All Pages - Header & Navigation] Container */
 header {
@@ -100,6 +87,11 @@ nav a {
 #landing-page-submit-button {
     background-color: transparent;
     border: 2px solid var(--cyan);
+    border-radius: 60px;
+    color: var(--cyan);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 36px;
     margin: 0 25px 25px 0;
     padding: 36px;
 }
@@ -162,6 +154,8 @@ nav a {
 /* [Submissions Page] Form h2 - "SUBMIT YOUR WORK" */
 form h2 {
     color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
     padding-bottom: 15px;
 }
 
@@ -180,16 +174,64 @@ form input {
 }
 
 /* [Submissions Page] Button - "SUBMIT" */
-.small-button {
+#form-submit-button {
     background-color: transparent;
     border: 2px solid var(--cyan);
     border-radius: 60px;
     color: var(--cyan);
     cursor: pointer;
-    font-size: var(--small-button-font-size);
+    font-size: 20px;
     margin-top: 10px;
     padding: 15px 55px;
 }
+
+/****** DETAILS PAGE - MAIN SECTION ******/
+/* [Details Page] Main Container */
+#details-page-main-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 40px 160px 100px 160px;
+    text-align: center;
+}
+
+/* [Details Page] Current Name h2 */
+#details-page-main-container h2 {
+    font-size: 36px;
+    padding: 20px 0 40px 0;
+}
+
+/* [Details Page] Current Image */
+.current-image {
+    width: 100%;
+}
+
+/* [Details Page] Current Image Number - "# of #" */
+.current-image-number {
+    font-size: 20px;
+    padding: 20px 0 35px 0;
+}
+
+/* [Details Page] Buttons Container */
+.details-page-buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    align-self: center;
+    width: 240px;
+}
+
+/* [Details Page] Buttons - "Previous" & "Next" */
+.details-page-button {
+    background-color: var(--dark-blue);
+    border: none;
+    border-radius: 60px;
+    color: var(--cyan);
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+
 
 /****** ABOUT US PAGE - MAIN SECTION ******/
 /* [About Us Page] Main Container */
