@@ -47,7 +47,7 @@ const imageSets = [
         'https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
       ]
     }
-  ];
+  ]
 
 // [Submissions Page] Creates new elements using object details to populate #images-container div
 const imagesContainer = document.querySelector("#images-container");
@@ -70,7 +70,7 @@ window.onload = function() {
     displaySubmissions(imageSets);
 }
 
-// [Submissions, Details & About Us Pages] Dark Mode/Light Mode Toggle
+// [Submissions & About Us Pages] Dark Mode/Light Mode Toggle
 // There are special instructions that execute only if a certain element exists in the page.
 const themeButton = document.querySelector(".theme-button");
 const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
@@ -109,7 +109,7 @@ const toggleTheme = () => {
 themeButton.onclick = toggleTheme;
 
 // [Submissions Page] Adds new submissions to #images-container div from entered values
-const submitButton = document.querySelector("#submit-button");
+const submitButton = document.querySelector("#form-submit-button");
 submitButton.addEventListener ("click", (e) => {
   // Prevents the form's default function of refreshing the page
   e.preventDefault();
