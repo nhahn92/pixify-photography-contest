@@ -45,6 +45,7 @@ header {
     color: var(--cyan);
     cursor: pointer;
     font-size: 16px;
+    padding-left: 35px;
 }
 
 /* [All Pages - Header & Navigation] Anchors */
@@ -231,8 +232,6 @@ form input {
     padding: 5px 20px;
 }
 
-
-
 /****** ABOUT US PAGE - MAIN SECTION ******/
 /* [About Us Page] Main Container */
 #about-us-page-main-container {
@@ -275,14 +274,19 @@ form input {
 
 /* [About Us Page] Left-Side Mission Statement Deadline - "DEADLINE: 17TH..." */
 #about-us-mission-statement-container >:nth-child(4) {
+    padding-bottom: 60px;
     padding-top: 20px;
 }
 
 /* [About Us Page] Left-Side Mission Statement Button - "SUBMIT NOW" */
 #about-us-submit-button {
     background-color: var(--dark-blue);
-    margin: 30px 25px 25px 0;
-    padding: 40px 80px;
+    border-radius: 60px;
+    color: var(--cyan);
+    font-size: 36px;
+    margin: 0 25px 25px 0;
+    padding: 30px 65px;
+
 }
 
 /* [About Us Page] Right-Side Banner Container */
