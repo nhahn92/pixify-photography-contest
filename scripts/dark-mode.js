@@ -27,17 +27,17 @@ const toggleTheme = () => {
 
     // Changes elements on the Details Page if the current URL matches
     if (detailsUrl > -1) {
-        detailsPageImageContainer.style.color = "var(--black)";
-        for (let i = 0; i < detailsPageButtons.length; i++) {
-            detailsPageButtons[i].style.border = "none";
-        }
+      detailsPageImageContainer.style.color = "var(--black)";
+      for (let i = 0; i < detailsPageButtons.length; i++) {
+          detailsPageButtons[i].style.border = "none";
       }
+    }
     // Dark Mode
   } else {
     body.style.backgroundColor = "var(--dark-blue)";
     heading1.style.color = "var(--white)";
     for (let i = 0; i < paragraph.length; i++) {
-        paragraph[i].style.color = "var(--white)";
+      paragraph[i].style.color = "var(--white)";
     }
     themeButton.innerHTML = "Light Mode";
 
@@ -48,10 +48,10 @@ const toggleTheme = () => {
 
     // Changes elements on the Details Page if the current URL matches
     if (detailsUrl > -1) {
-        detailsPageImageContainer.style.color = "var(--white)";
-        for (let i = 0; i < detailsPageButtons.length; i++) {
-            detailsPageButtons[i].style.border = "2px solid var(--cyan)";
-        }
+      detailsPageImageContainer.style.color = "var(--white)";
+      for (let i = 0; i < detailsPageButtons.length; i++) {
+          detailsPageButtons[i].style.border = "2px solid var(--cyan)";
+      }
     }
   }
 };
