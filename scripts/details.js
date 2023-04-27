@@ -49,63 +49,81 @@ const imageSets = [
     }
   ]
 
-  let currentId;
-  let currentName;
-  let currentTitle;
+const urlParams = new URLSearchParams(window.location.search);
+let currentId = urlParams.get("id");
+let currentName;
+let currentTitle;
+let currentImage;
+const currentImageContainer = document.querySelector("#current-image-container");
+const nextButton = document.querySelector("#next-button");
+const previousButton = document.querySelector("#previous-button");
   
-  window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    currentId = urlParams.get("id");
+// Populates the #current-image-container based on the id
+window.onload = function() {
+  currentImage = imageSets.filter(item => item.id == currentId);
+  // Starts with the first image in the set from the imageSets object
+  currentName = currentImage[0].name;
+  currentTitle = currentImage[0].title;
   
-    const currentImage = imageSets.filter(item => item.id == currentId);
-  
-    currentName = currentImage[0].name;
-    currentTitle = currentImage[0].title;
-  
-    const image = `<h1>${currentTitle}</h1>
-        <h2>${currentName}</h2>
-        <img src=${currentImage[0].images[0]} alt=${currentImage[0].name} class="current-image" />
-        <p class="current-image-number">1 of ${currentImage[0].images.length}</p>`;
-    const currentImageContainer = document.querySelector("#current-image-container");
+  // Creates the HTML needed for displaying the selected information
+  const image = `<h1>${currentTitle}</h1>
+  <h2>${currentName}</h2>
+  <img src=${currentImage[0].images[0]} alt=${currentImage[0].name} class="current-image" />
+  <p class="current-image-number">1 of ${currentImage[0].images.length}</p>`;
+
+  currentImageContainer.innerHTML = image;
+}
+
+// Image Carousel
+// Creates the HTML needed to populate the #current-image-container with either the next or previous image
+const createNewCarouselImage = () => {
+  const image = `<h1>${currentTitle}</h1>
+    <h2>${currentName}</h2>
+    <img src=${currentImage[0].images[imageId]} alt=${currentImage[0].name} class="current-image" />
+    <p class="current-image-number">${imageId + 1} of ${currentImage[0].images.length}</p>`;
+
     currentImageContainer.innerHTML = image;
+}
+
+// Adds functionality to the "Next" and "Previous" buttons by calling the "changeImage" function
+let imageId = 0;
+nextButton.addEventListener("click", (e) => {
+    if (imageId < 4) {
+      imageId++;
+      // Calls the function to populate the #current-image-container with the next image
+      createNewCarouselImage();
+    }
+  });
+previousButton.addEventListener("click", (e) => {
+  if (imageId > 0) {
+    imageId--;
+    // Calls the function to populate the #current-image-container with the next image
+    createNewCarouselImage();
   }
+});
 
 // Dark Mode/Light Mode Toggle
 const themeButton = document.querySelector(".theme-button");
-const detailsPageButtons = document.querySelectorAll(".details-page-button");
 const toggleTheme = () => {
+  const detailsPageButtons = document.querySelectorAll(".details-page-button");
   const body = document.querySelector("body");
-  const heading1 = document.querySelector("h1");
-  const heading2 = document.querySelector("h2");
-  const paragraph = document.querySelectorAll("p");
-
   if (body.style.backgroundColor === "var(--dark-blue)") {
-    // Loops through the collection "detailsPageButtons" to turn all nodes black for Light Mode
+    // Loops through the collection "detailsPageButtons" to remove the border for Light Mode
     for (let i = 0; i < detailsPageButtons.length; i++) {
-        detailsPageButtons[i].style.border = "none";
+      detailsPageButtons[i].style.border = "none";
     }
     body.style.backgroundColor = "var(--white)";
-    heading1.style.color = "var(--black)";
-    heading2.style.color = "var(--black)";
+    currentImageContainer.style.color = "var(--black)";
     themeButton.innerHTML = "Dark Mode";
-    // Loops through the collection "paragraph" to turn all nodes black for Light Mode
-    for (let i = 0; i < paragraph.length; i++) {
-      paragraph[i].style.color = "var(--black)";
-    }
   } else {
-    // Loops through the collection "detailsPageButtons" to turn all nodes white for Dark Mode
+    // Loops through the collection "detailsPageButtons" to add a border for Dark Mode
     for (let i = 0; i < detailsPageButtons.length; i++) {
-        detailsPageButtons[i].style.border = "2px solid var(--cyan)";
+      detailsPageButtons[i].style.border = "2px solid var(--cyan)";
     }
     body.style.backgroundColor = "var(--dark-blue)"
-    heading1.style.color = "var(--white)";
-    heading2.style.color = "var(--white)";
+    currentImageContainer.style.color = "var(--white)";
     themeButton.innerHTML = "Light Mode";
-    // Loops through the collection "paragraph" to turn all nodes white for Dark Mode
-    for (let i = 0; i < paragraph.length; i++) {
-      paragraph[i].style.color = "var(--white)";
-    }
   }
 }
-// Adds the Dark Mode/Light Mode toggle to the Dark Mode button
-themeButton.onclick = toggleTheme;
+// Adds the Dark Mode/Light Mode toggle to the "Dark Mode" button
+themeButton.addEventListener("click", toggleTheme);
