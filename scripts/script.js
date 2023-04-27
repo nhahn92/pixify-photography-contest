@@ -65,13 +65,13 @@ const displaySubmissions = (images) => {
   imagesContainer.innerHTML = allImages.join("");
 }
 
-// [Submissions Page] Populates #images-container div with image objects on page load
+// [Submissions Page] Populates the #images-container div with image objects on page load
 window.onload = function() {
     displaySubmissions(imageSets);
 }
 
 // [Submissions & About Us Pages] Dark Mode/Light Mode Toggle
-// There are special instructions that execute only if a certain element exists in the page.
+// There are special instructions that execute only if a certain element exists in the page
 const themeButton = document.querySelector(".theme-button");
 const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 const toggleTheme = () => {
@@ -105,8 +105,8 @@ const toggleTheme = () => {
     }
   }
 }
-// Adds the Dark Mode/Light Mode toggle to the Dark Mode button
-themeButton.onclick = toggleTheme;
+// Adds the Dark Mode/Light Mode toggle to the "Dark Mode" button
+themeButton.addEventListener("click", toggleTheme);
 
 // [Submissions Page] Adds new submissions to #images-container div from entered values
 const submitButton = document.querySelector("#form-submit-button");
@@ -148,8 +148,8 @@ submitButton.addEventListener ("click", (e) => {
           <p>${title} - ${name}</p>
           <p class="see-more">see more</p>
         </div>`;
-      // Appends the new "a" element to the existing #images-container div
-      imagesContainer.appendChild(newSubmission);
+      // Adds the new "a" element to the beginning of the existing #images-container div
+      imagesContainer.insertBefore(newSubmission, imagesContainer.firstChild);
     }
   }
   createNewSubmission(imageUrlArray);
