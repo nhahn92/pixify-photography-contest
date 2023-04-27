@@ -15,13 +15,13 @@ h1 {
 /****** ALL PAGES - HEADER & NAVIGATION ******/
 /* [All Pages - Header & Navigation] Container */
 header {
-    background-color: var(--dark-blue);
-    height: 50px;
-    padding: 0 10px 0 27px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background-color: var(--dark-blue);
+    height: 50px;
+    padding: 0 10px 0 27px;
 }
 
 /* [All Pages - Header & Navigation] Logo - "Pixify" */
@@ -55,7 +55,7 @@ nav a {
 
 /****** LANDING PAGE - MAIN SECTION ******/
 /* [Landing Page - Main Section] Background Image */
-#landing-page-main-container img {
+.landing-page-main-container img {
     display: block;
     object-fit: cover;
     height: 100vh;
@@ -63,7 +63,7 @@ nav a {
 }
 
 /* [Landing Page - Main Section] Paragraph & Button Container */
-#landing-page-introduction-container {
+.landing-page-content-container {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -74,7 +74,7 @@ nav a {
 }
 
 /* [Landing Page - Main Section] Paragraph Container */
-#landing-page-text-container {
+.landing-page-content-container >:first-child {
     background-color: var(--dark-blue);
     border-radius: 150px 150px 150px 0;
     color: var(--white);
@@ -85,7 +85,7 @@ nav a {
 }
 
 /* [Landing Page - Main Section] Button - "Submit Now" */
-#landing-page-submit-button {
+.landing-page-content-container >:nth-child(2) a {
     background-color: transparent;
     border: 2px solid var(--cyan);
     border-radius: 60px;
@@ -99,7 +99,7 @@ nav a {
 
 /****** SUBMISSIONS PAGE - MAIN SECTION ******/
 /* [Submissions Page] Main Container */
-#submissions-page-main-container {
+.submissions-page-main-container {
     margin: 55px 60px 60px 70px;
     text-align: center;
 
@@ -141,7 +141,7 @@ nav a {
 }
 
 /* [Submissions Page] Form Container */
-#submissions-page-form-container {
+.submissions-page-main-container >:nth-child(2) form {
     background-color: var(--dark-blue);
     border-radius: 8px;
     margin-right: 60px;
@@ -153,7 +153,7 @@ nav a {
 }
 
 /* [Submissions Page] Form h2 - "SUBMIT YOUR WORK" */
-form h2 {
+.submissions-page-main-container >:nth-child(2) form h2 {
     color: var(--white);
     font-size: 24px;
     font-weight: 700;
@@ -161,7 +161,7 @@ form h2 {
 }
 
 /* [Submissions Page] Form Input Fields */
-form input {
+.submissions-page-main-container >:nth-child(2) form input {
     border-radius: 8px;
     font-size: var(--submissions-page-input-font-size);
     margin-bottom: 20px;
@@ -188,7 +188,7 @@ form input {
 
 /****** DETAILS PAGE - MAIN SECTION ******/
 /* [Details Page] Main Container */
-#details-page-main-container {
+.details-page-main-container {
     display: flex;
     flex-direction: column;
 
@@ -197,7 +197,7 @@ form input {
 }
 
 /* [Details Page] Current Name h2 */
-#details-page-main-container h2 {
+.details-page-main-container h2 {
     font-size: 36px;
     padding: 20px 0 40px 0;
 }
@@ -228,34 +228,35 @@ form input {
     border: none;
     border-radius: 60px;
     color: var(--cyan);
+    cursor: pointer;
     font-size: 20px;
     padding: 5px 20px;
 }
 
 /****** ABOUT US PAGE - MAIN SECTION ******/
 /* [About Us Page] Main Container */
-#about-us-page-main-container {
+.about-us-page-main-container {
     margin: 30px 60px 100px 80px;
 }
 
 /* [About Us Page] h1 Text */
-#about-us-page-main-container h1 {
+.about-us-page-main-container h1 {
     margin-bottom: 40px;
 }
 
 /* [About Us Page] Paragraph Text */
-#about-us-page-main-container p {
+.about-us-page-main-container p {
     font-size: var(--about-us-page-p-font-size);
     margin-bottom: 30px;
 }
 
 /* [About Us Page] Top Blurb Container */
-#about-us-blurb-container {
+.about-us-page-main-container >:first-child {
     text-align: center;
 }
 
 /* [About Us Page] Bottom Details & Image Container */
-#about-us-page-main-container >:nth-child(2) {
+.about-us-page-main-container >:nth-child(2) {
     display: flex;
     column-gap: 40px;
 
@@ -263,17 +264,17 @@ form input {
 }
 
 /* [About Us Page] Left-Side Mission Statement Container */
-#about-us-mission-statement-container {
+.about-us-mission-statement-container {
     width: 70%;
 }
 
 /* [About Us Page] Left-Side Mission Statement Paragraph Text */
-#about-us-mission-statement-container p {
+.about-us-mission-statement-container p {
     padding-bottom: 10px;
 }
 
 /* [About Us Page] Left-Side Mission Statement Deadline - "DEADLINE: 17TH..." */
-#about-us-mission-statement-container >:nth-child(4) {
+.about-us-mission-statement-container >:nth-child(4) {
     padding-bottom: 60px;
     padding-top: 20px;
 }
@@ -290,22 +291,12 @@ form input {
 }
 
 /* [About Us Page] Right-Side Banner Container */
-#about-us-banner-container {
+.about-us-banner-container {
     width: 30%;
 }
 
 /* [About Us Page] Right-Side Banner Image */
-#about-us-banner-container img {
+.about-us-banner-container img {
     border-radius: 8px;
     width: 100%;
 }
-
-/* TABLET VIEW 
-@media screen (max-width: 834px) {
-    
-} */
-
-/* MOBILE VIEW
-@media screen (max-width: 390px) {
-    
-} */
