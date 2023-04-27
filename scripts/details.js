@@ -101,29 +101,3 @@ previousButton.addEventListener("click", (e) => {
     createNewCarouselImage();
   }
 });
-
-// Dark Mode/Light Mode Toggle
-const themeButton = document.querySelector(".theme-button");
-const toggleTheme = () => {
-  const detailsPageButtons = document.querySelectorAll(".details-page-button");
-  const body = document.querySelector("body");
-  if (body.style.backgroundColor === "var(--dark-blue)") {
-    // Loops through the collection "detailsPageButtons" to remove the border for Light Mode
-    for (let i = 0; i < detailsPageButtons.length; i++) {
-      detailsPageButtons[i].style.border = "none";
-    }
-    body.style.backgroundColor = "var(--white)";
-    currentImageContainer.style.color = "var(--black)";
-    themeButton.innerHTML = "Dark Mode";
-  } else {
-    // Loops through the collection "detailsPageButtons" to add a border for Dark Mode
-    for (let i = 0; i < detailsPageButtons.length; i++) {
-      detailsPageButtons[i].style.border = "2px solid var(--cyan)";
-    }
-    body.style.backgroundColor = "var(--dark-blue)"
-    currentImageContainer.style.color = "var(--white)";
-    themeButton.innerHTML = "Light Mode";
-  }
-}
-// Adds the Dark Mode/Light Mode toggle to the "Dark Mode" button
-themeButton.addEventListener("click", toggleTheme);

@@ -70,44 +70,6 @@ window.onload = function() {
     displaySubmissions(imageSets);
 }
 
-// [Submissions & About Us Pages] Dark Mode/Light Mode Toggle
-// There are special instructions that execute only if a certain element exists in the page
-const themeButton = document.querySelector(".theme-button");
-const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
-const toggleTheme = () => {
-  const body = document.querySelector("body");
-  const heading1 = document.querySelector("h1");
-  const paragraph = document.querySelectorAll("p");
-
-  if (body.style.backgroundColor === "var(--dark-blue)") {
-    // Determines if a certain element exists in the page
-    if (aboutUsSubmitButton) {
-      aboutUsSubmitButton.style.border = "none";
-    }
-    body.style.backgroundColor = "var(--white)";
-    heading1.style.color = "var(--black)";
-    themeButton.innerHTML = "Dark Mode";
-    // Loops through the collection "paragraph" to turn all nodes black for Light Mode
-    for (let i = 0; i < paragraph.length; i++) {
-      paragraph[i].style.color = "var(--black)";
-    }
-  } else {
-    // Determines if a certain element exists in the page
-    if (aboutUsSubmitButton) {
-      aboutUsSubmitButton.style.border = "2px solid var(--cyan)";
-    }
-    body.style.backgroundColor = "var(--dark-blue)"
-    heading1.style.color = "var(--white)";
-    themeButton.innerHTML = "Light Mode";
-    // Loops through the collection "paragraph" to turn all nodes white for Dark Mode
-    for (let i = 0; i < paragraph.length; i++) {
-      paragraph[i].style.color = "var(--white)";
-    }
-  }
-}
-// Adds the Dark Mode/Light Mode toggle to the "Dark Mode" button
-themeButton.addEventListener("click", toggleTheme);
-
 // [Submissions Page] Adds new submissions to #images-container div from entered values
 const submitButton = document.querySelector("#form-submit-button");
 submitButton.addEventListener ("click", (e) => {
@@ -131,24 +93,19 @@ submitButton.addEventListener ("click", (e) => {
     }
   });
   
-  // Creates a new "a" element from the form values and filtered URLs
-  let newImageId = 5;
+  // Creates a new "div" element from the form values and filtered URLs
   const createNewSubmission = array => {
-    // Loops through array to add a class and href attribute
+    // Loops through the array to add a class
     for (let i = 0; i < array.length; i++) {
-      const newSubmission = document.createElement("a");
+      const newSubmission = document.createElement("div");
       newSubmission.classList.add("submission-image");
-      newSubmission.href = `details.html?id=${newImageId}`;
-      // Increments href Id each loop
-      newImageId += 1;
 
-      // Adds the following HTML to each new "a" element
+      // Adds the following HTML to each new "div" element
       newSubmission.innerHTML = `<img src=${array[i]} alt=${title} class="submission-image" />
         <div class="submission-details-container">
           <p>${title} - ${name}</p>
-          <p class="see-more">see more</p>
         </div>`;
-      // Adds the new "a" element to the beginning of the existing #images-container div
+      // Adds the new "div" element to the beginning of the existing #images-container div
       imagesContainer.insertBefore(newSubmission, imagesContainer.firstChild);
     }
   }
