@@ -1,5 +1,4 @@
-/****** SUBMISSIONS PAGE - MAIN SECTION ******/
-/* [Submissions Page] Main Container */
+/* Main Container */
 main {
     margin: 55px 60px 60px 70px;
     text-align: center;
@@ -9,7 +8,7 @@ main {
     column-gap: 70px;
 }
 
-/* [Submissions Page] Individual Submissions Container (Populated with JavaScript) */
+/* Individual Submissions Container (Populated with JavaScript) */
 #images-container {
     margin-top: 60px;
 
@@ -18,30 +17,30 @@ main {
     gap: 40px 70px;
 }
 
-/* [Submissions Page] Submission Images */
+/* Submission Images */
 #images-container img {
     border-radius: 8px;
     width: 100%;
 }
 
-/* [Submissions Page] Submission Details Container - "Title - Name    see more" */
+/* Submission Details Container - "Title - Name    see more" */
 .submission-details-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* [Submissions Page] Submission Anchors */
+/* Submission Anchors */
 #images-container a {
     color: var(--black);
 }
 
-/* [Submissions Page] "See More" */
+/* "See More" */
 .see-more {
     font-size: 12px;
 }
 
-/* [Submissions Page] Form Container */
+/* Form Container */
 main >:nth-child(2) form {
     background-color: var(--dark-blue);
     border-radius: 8px;
@@ -53,7 +52,7 @@ main >:nth-child(2) form {
     flex-direction: column;
 }
 
-/* [Submissions Page] Form h2 - "SUBMIT YOUR WORK" */
+/* Form h2 - "SUBMIT YOUR WORK" */
 main >:nth-child(2) form h2 {
     color: var(--white);
     font-size: 24px;
@@ -61,7 +60,7 @@ main >:nth-child(2) form h2 {
     padding-bottom: 15px;
 }
 
-/* [Submissions Page] Form Input Fields */
+/* Form Input Fields */
 main >:nth-child(2) form input {
     border-radius: 8px;
     font-size: var(--submissions-page-input-font-size);
@@ -70,12 +69,12 @@ main >:nth-child(2) form input {
     width: 80%;
 }
 
-/* [Submissions Page] Form Input Field Placeholders */
+/* Form Input Field Placeholders */
 ::placeholder {
     color: var(--light-gray);
 }
 
-/* [Submissions Page] Button - "SUBMIT" */
+/* Button - "SUBMIT" */
 #form-submit-button {
     background-color: transparent;
     border: 2px solid var(--cyan);

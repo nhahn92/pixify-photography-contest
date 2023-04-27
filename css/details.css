@@ -1,5 +1,4 @@
-/****** DETAILS PAGE - MAIN SECTION ******/
-/* [Details Page] Main Container */
+/* Main Container */
 main {
     display: flex;
     flex-direction: column;
@@ -8,24 +7,24 @@ main {
     text-align: center;
 }
 
-/* [Details Page] Current Name h2 */
+/* Current Name h2 */
 main h2 {
     font-size: 36px;
     padding: 20px 0 40px 0;
 }
 
-/* [Details Page] Current Image */
+/* Current Image */
 .current-image {
     height: 50vh;
 }
 
-/* [Details Page] Current Image Number - "# of #" */
+/* Current Image Number - "# of #" */
 .current-image-number {
     font-size: 20px;
     padding: 20px 0 35px 0;
 }
 
-/* [Details Page] Buttons Container */
+/* Buttons Container */
 .details-page-buttons-container {
     display: flex;
     justify-content: space-between;
@@ -34,7 +33,7 @@ main h2 {
     width: 240px;
 }
 
-/* [Details Page] Buttons - "Previous" & "Next" */
+/* Buttons - "Previous" & "Next" */
 .details-page-button {
     background-color: var(--dark-blue);
     border: none;
