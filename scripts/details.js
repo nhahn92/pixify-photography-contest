@@ -47,7 +47,7 @@ const imageSets = [
         'https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
       ]
     }
-  ]
+  ];
 
 const urlParams = new URLSearchParams(window.location.search);
 let currentId = urlParams.get("id");
@@ -72,7 +72,7 @@ window.onload = function() {
   <p class="current-image-number">1 of ${currentImage[0].images.length}</p>`;
 
   currentImageContainer.innerHTML = image;
-}
+};
 
 // Image Carousel
 // Creates the HTML needed to populate the #current-image-container with either the next or previous image
@@ -83,21 +83,31 @@ const createNewCarouselImage = () => {
     <p class="current-image-number">${imageId + 1} of ${currentImage[0].images.length}</p>`;
 
     currentImageContainer.innerHTML = image;
-}
+};
 
 // Adds functionality to the "Next" and "Previous" buttons by calling the "changeImage" function
 let imageId = 0;
-nextButton.addEventListener("click", (e) => {
+nextButton.addEventListener("click", () => {
     if (imageId < 4) {
       imageId++;
+      previousButton.style.backgroundColor = "var(--dark-blue)";
+      previousButton.style.cursor = "pointer";
       // Calls the function to populate the #current-image-container with the next image
       createNewCarouselImage();
+    } else {
+      nextButton.style.backgroundColor = "gray";
+      nextButton.style.cursor = "default";
     }
   });
-previousButton.addEventListener("click", (e) => {
+previousButton.addEventListener("click", () => {
   if (imageId > 0) {
     imageId--;
+    nextButton.style.backgroundColor = "var(--dark-blue)";
+    nextButton.style.cursor = "pointer";
     // Calls the function to populate the #current-image-container with the next image
     createNewCarouselImage();
+  } else {
+    previousButton.style.backgroundColor = "gray";
+    previousButton.style.cursor = "default";
   }
 });
