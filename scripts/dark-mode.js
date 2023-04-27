@@ -1,5 +1,6 @@
 const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 const detailsPageButtons = document.querySelectorAll(".details-page-button");
+const detailsPageImageContainer = document.querySelector("#current-image-container");
 const submissionContainer = document.querySelector("#images-container");
 const themeButton = document.querySelector(".theme-button");
 
@@ -27,7 +28,7 @@ const toggleTheme = () => {
 
     // Changes elements on the Details Page if the current URL matches
     if (detailsUrl > -1) {
-        currentImageContainer.style.color = "var(--black)";
+        detailsPageImageContainer.style.color = "var(--black)";
         for (let i = 0; i < detailsPageButtons.length; i++) {
             detailsPageButtons[i].style.border = "none";
         }
@@ -48,7 +49,7 @@ const toggleTheme = () => {
 
     // Changes elements on the Details Page if the current URL matches
     if (detailsUrl > -1) {
-        currentImageContainer.style.color = "var(--white)";
+        detailsPageImageContainer.style.color = "var(--white)";
         for (let i = 0; i < detailsPageButtons.length; i++) {
             detailsPageButtons[i].style.border = "2px solid var(--cyan)";
         }
