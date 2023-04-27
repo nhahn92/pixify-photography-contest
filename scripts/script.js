@@ -47,7 +47,7 @@ const imageSets = [
         'https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
       ]
     }
-  ]
+  ];
 
 // [Submissions Page] Creates new elements using object details to populate #images-container div
 const imagesContainer = document.querySelector("#images-container");
@@ -60,15 +60,15 @@ const displaySubmissions = (images) => {
         <p class="see-more">see more</p>
       </div>
     </a>`;
-  })
+  });
   // Adds new elements to the container and removes commas from array
   imagesContainer.innerHTML = allImages.join("");
-}
+};
 
 // [Submissions Page] Populates the #images-container div with image objects on page load
 window.onload = function() {
     displaySubmissions(imageSets);
-}
+};
 
 // [Submissions Page] Adds new submissions to #images-container div from entered values
 const submitButton = document.querySelector("#form-submit-button");
@@ -108,7 +108,7 @@ submitButton.addEventListener ("click", (e) => {
       // Adds the new "div" element to the beginning of the existing #images-container div
       imagesContainer.insertBefore(newSubmission, imagesContainer.firstChild);
     }
-  }
+  };
   createNewSubmission(imageUrlArray);
 
   // Resets all form inputs
@@ -119,4 +119,4 @@ submitButton.addEventListener ("click", (e) => {
   document.querySelector("input[name='imageUrlThree']").value = "";
   document.querySelector("input[name='imageUrlFour']").value = "";
   document.querySelector("input[name='imageUrlFive']").value = "";
-})
+});
