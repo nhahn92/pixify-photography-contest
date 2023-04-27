@@ -1,0 +1,67 @@
+/****** ABOUT US PAGE - MAIN SECTION ******/
+/* [About Us Page] Main Container */
+main {
+    margin: 30px 60px 100px 80px;
+}
+
+/* [About Us Page] h1 Text */
+main h1 {
+    margin-bottom: 40px;
+}
+
+/* [About Us Page] Paragraph Text */
+main p {
+    font-size: var(--about-us-page-p-font-size);
+    margin-bottom: 30px;
+}
+
+/* [About Us Page] Top Blurb Container */
+main >:first-child {
+    text-align: center;
+}
+
+/* [About Us Page] Bottom Details & Image Container */
+main >:nth-child(2) {
+    display: flex;
+    column-gap: 40px;
+
+    margin-top: 65px;
+}
+
+/* [About Us Page] Left-Side Mission Statement Container */
+.about-us-mission-statement-container {
+    width: 70%;
+}
+
+/* [About Us Page] Left-Side Mission Statement Paragraph Text */
+.about-us-mission-statement-container p {
+    padding-bottom: 10px;
+}
+
+/* [About Us Page] Left-Side Mission Statement Deadline - "DEADLINE: 17TH..." */
+.about-us-mission-statement-container >:nth-child(4) {
+    padding-bottom: 60px;
+    padding-top: 20px;
+}
+
+/* [About Us Page] Left-Side Mission Statement Button - "SUBMIT NOW" */
+#about-us-submit-button {
+    background-color: var(--dark-blue);
+    border-radius: 60px;
+    color: var(--cyan);
+    font-size: 36px;
+    margin: 0 25px 25px 0;
+    padding: 30px 65px;
+
+}
+
+/* [About Us Page] Right-Side Banner Container */
+.about-us-banner-container {
+    width: 30%;
+}
+
+/* [About Us Page] Right-Side Banner Image */
+.about-us-banner-container img {
+    border-radius: 8px;
+    width: 100%;
+}
