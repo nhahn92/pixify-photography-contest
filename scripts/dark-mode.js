@@ -1,7 +1,6 @@
 const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 const detailsPageButtons = document.querySelectorAll(".details-page-button");
 const detailsPageImageContainer = document.querySelector("#current-image-container");
-const submissionContainer = document.querySelector("#images-container");
 const themeButton = document.querySelector(".theme-button");
 
 let aboutUsUrl = window.location.href.indexOf("about-us.html");
@@ -55,5 +54,5 @@ const toggleTheme = () => {
         }
     }
   }
-}
+};
 themeButton.addEventListener("click", toggleTheme);
