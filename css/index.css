@@ -1,0 +1,42 @@
+/* Background Image */
+main img {
+    display: block;
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Paragraph & Button Container */
+.landing-page-content-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+}
+
+/* Paragraph Container */
+.landing-page-content-container >:first-child {
+    background-color: var(--dark-blue);
+    border-radius: 150px 150px 150px 0;
+    color: var(--white);
+    font-size: var(--landing-page-p-font-size);
+    max-width: 660px;
+    padding: 50px 35px 30px 25px;
+    text-align: center;
+}
+
+/* Button - "Submit Now" */
+.landing-page-content-container >:nth-child(2) a {
+    background-color: transparent;
+    border: 2px solid var(--cyan);
+    border-radius: 60px;
+    color: var(--cyan);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 36px;
+    margin: 0 25px 25px 0;
+    padding: 36px;
+}
