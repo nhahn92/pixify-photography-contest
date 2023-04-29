@@ -23,13 +23,13 @@ main img {
     border-radius: 150px 150px 150px 0;
     color: var(--white);
     font-size: var(--landing-page-p-font-size);
-    max-width: 660px;
-    padding: 50px 35px 30px 25px;
+    width: 550px;
+    padding: 50px 40px 30px 30px;
     text-align: center;
 }
 
 /* Button - "Submit Now" */
-.landing-page-content-container >:nth-child(2) a {
+.landing-page-content-container a {
     background-color: transparent;
     border: 2px solid var(--cyan);
     border-radius: 60px;
@@ -39,4 +39,54 @@ main img {
     font-size: 36px;
     margin: 0 25px 25px 0;
     padding: 36px;
+}
+
+/****** MEDIA QUERIES ******/
+/* Tablet View - Max Width of 978px */
+@media (max-width: 978px) {
+    /* Paragraph Container */
+    .landing-page-content-container >:first-child {
+        width: 440px;
+    }
+
+    /* Text - "Join our photography..." */
+    .landing-page-content-container p {
+        font-size: 20px;
+    }
+
+    /* Button - "Submit Now" */
+    .landing-page-content-container a {
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+/* Mobile View - Max Width of 490px */
+@media (max-width: 490px) {
+    /* Paragraph & Button Container */
+    .landing-page-content-container {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Paragraph Container */
+    .landing-page-content-container >:first-child {
+        background-color: rgb(42, 59, 73, 0.8);
+        border-radius: 8px;
+        padding: 15px;
+        width: 200px;
+    }
+
+    /* Text - "Join our photography..." */
+    .landing-page-content-container p {
+        font-size: 14px;
+    }
+
+    /* Button - "Submit Now" */
+    .landing-page-content-container a {
+        font-size: 16px;
+        padding: 15px;
+        margin: 25px 0;
+    }
 }

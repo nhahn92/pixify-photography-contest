@@ -20,6 +20,8 @@ main {
 /* Submission Images */
 #images-container img {
     border-radius: 8px;
+    height: 30vh;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -38,6 +40,7 @@ main {
 /* "See More" */
 .see-more {
     font-size: 12px;
+    padding-left: 30px;
 }
 
 /* Form Container */
@@ -45,7 +48,7 @@ main >:nth-child(2) form {
     background-color: var(--dark-blue);
     border-radius: 8px;
     margin-right: 60px;
-    padding: 30px;
+    padding: 35px;
 
     display: flex;
     align-items: center;
@@ -69,6 +72,11 @@ main >:nth-child(2) form input {
     width: 80%;
 }
 
+/* Form Input Fields (On Hover) */
+main >:nth-child(2) form input:hover {
+    border-color: var(--cyan);
+}
+
 /* Form Input Field Placeholders */
 ::placeholder {
     color: var(--light-gray);
@@ -84,4 +92,77 @@ main >:nth-child(2) form input {
     font-size: 20px;
     margin-top: 10px;
     padding: 15px 55px;
+}
+
+/* Button - "SUBMIT" (On Hover) */
+#form-submit-button:hover {
+    color: var(--white);
+    border-color: var(--white);
+    font-size: 21px;
+}
+
+/****** MEDIA QUERIES ******/
+/* Tablet View - Max Width of 978px */
+@media (max-width: 978px) {
+    /* Main Container */
+    main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        margin: 65px 40px 15px 40px;
+    }
+
+    /* Individual Submissions Container (Populated with JavaScript) */
+    #images-container {
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    /* Form Container */
+    main >:nth-child(2) form {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    /* Form h2 - "SUBMIT YOUR WORK" */
+    main >:nth-child(2) form h2 {
+        font-size: 20px;
+    }
+
+    /* Form Input Fields */
+    main >:nth-child(2) form input {
+        width: 100%;
+    }
+}
+
+/* Mobile View - Max Width of 550px */
+@media (max-width: 550px) {
+    main {
+        column-gap: 20px;
+        margin: 65px 20px 15px 20px;
+    }
+
+    /* Submission Images */
+    #images-container img {
+        
+    }
+
+    /* Submission Details Container - "Title - Name    see more" */
+    .submission-details-container {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    /* "See More" */
+    .see-more {
+        margin-top: 5px;
+        padding-left: 0;
+    }
+    
+    /* Form Container */
+    main >:nth-child(2) form {
+        width: 60vw;
+    }
 }
