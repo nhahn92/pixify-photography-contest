@@ -30,12 +30,34 @@ header {
     font-size: var(--logo-font-size);
 }
 
+/* Logo - "Pixify" (On Hover) */
+.logo-navigation:hover {
+    color: var(--white);
+    font-size: 40px;
+}
+
+/* Hamburger Menu Icon Container */
+#hamburger-menu-container {
+    display: none;
+}
+
 /* Right Anchor Container */
 .navigation-container {
     display: flex;
     align-items: center;
     column-gap: 20px;
     padding-right: 10px;
+}
+
+/* Anchors */
+nav a {
+    color: var(--white);
+}
+
+/* Anchors (On Hover) */
+nav a:hover {
+    color: var(--cyan);
+    font-size: 17px;
 }
 
 /* "Dark Mode" */
@@ -48,7 +70,80 @@ header {
     padding-left: 35px;
 }
 
-/* Anchors */
-nav a {
+/* "Dark Mode" (On Hover) */
+.theme-button:hover {
     color: var(--white);
+    font-size: 17px;
+}
+
+/* Mobile View - Max Width of 550px */
+@media (max-width: 550px) {
+    /* Logo - "Pixify" */
+    .logo-navigation {
+        font-size: 25px;
+    }
+
+    /* Logo - "Pixify" (On Hover) */
+    .logo-navigation:hover {
+        font-size: 30px;
+    }
+
+    /* Hamburger Menu Icon Container */
+    #hamburger-menu-container {
+        display: block;
+    }
+
+    /* Hamburger Menu Icon */
+    #hamburger-menu-icon {
+        background-color: transparent;
+        border: none;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    /* Hamburger Menu Icon (On Hover) */
+    #hamburger-menu-icon:hover {
+        color: var(--cyan);
+        font-size: 34px;
+    }
+
+    /* Right Anchor Container */
+    .navigation-container {
+        display: none;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        display: flex;
+        justify-content: center;
+
+        position: absolute;
+        right: 0;
+        top: 50px;
+
+        background-color: rgb(42, 59, 73, 0.7);
+        font-size: 13px;
+        height: auto;
+        padding: 20px 5px 15px 5px;
+        width: 100%;
+    }
+
+    /* Anchors (On Hover) */
+    nav a:hover {
+        color: var(--cyan);
+        font-size: 13px;
+    }
+
+    /* "Dark Mode" */
+    .theme-button {
+        font-size: inherit;
+        padding-left: 0;
+    }
+
+    /* "Dark Mode" (On Hover) */
+    .theme-button:hover {
+        color: var(--white);
+        font-size: 13px;
+    }
 }
