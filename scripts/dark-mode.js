@@ -1,6 +1,7 @@
 const aboutUsSubmitButton = document.querySelector("#about-us-submit-button");
 const detailsPageButtons = document.querySelectorAll(".details-page-button");
 const detailsPageImageContainer = document.querySelector("#current-image-container");
+const hamburgerMenuContainer = document.getElementsByClassName("mobile-menu");
 const themeButton = document.querySelector(".theme-button");
 
 let aboutUsUrl = window.location.href.indexOf("about-us.html");
@@ -32,6 +33,12 @@ const toggleTheme = () => {
           detailsPageButtons[i].style.border = "none";
       }
     }
+
+    // Changes the background color of the hamburger menu container
+    // if the class ".mobile-menu" is present (through toggle)
+    if (hamburgerMenuContainer.length > 0) {
+      hamburgerMenuContainer[0].style.backgroundColor = "rgb(42, 59, 73, 0.7)";
+    }
     // Dark Mode
   } else {
     body.style.backgroundColor = "var(--dark-blue)";
@@ -52,6 +59,12 @@ const toggleTheme = () => {
       for (let i = 0; i < detailsPageButtons.length; i++) {
           detailsPageButtons[i].style.border = "2px solid var(--cyan)";
       }
+    }
+
+    // Changes the background color of the hamburger menu container
+    // if the class ".mobile-menu" is present (through toggle)
+    if (hamburgerMenuContainer.length > 0) {
+      hamburgerMenuContainer[0].style.backgroundColor = "rgb(93, 107, 118, 0.8)";
     }
   }
 };
